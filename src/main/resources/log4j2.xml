@@ -19,13 +19,10 @@
 		</File>
 	</Appenders>
 	<Loggers>
-		<Logger name="org.no.test.Test1" level="debug">
-			<AppenderRef ref="Console"/>
-			<AppenderRef ref="debug"/>
-		</Logger>
-		<Root level="error">
+		<Root level="all">
 			<AppenderRef ref="Console"/>
 			<AppenderRef ref="error"/>
+			<AppenderRef ref="debug"/>
 		</Root>
 	</Loggers>
 </Configuration>

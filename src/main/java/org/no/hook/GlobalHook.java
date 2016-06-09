@@ -6,15 +6,16 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
-import org.no.test.scripts.Test1;
+import org.no.test.suite.FunctionalTests;
+import org.no.test.suite.PageLoadingTests;
 
 @RunWith(Suite.class)
-@Suite.SuiteClasses({Test1.class})
+@Suite.SuiteClasses({FunctionalTests.class, PageLoadingTests.class})
 public class GlobalHook {
     private static Logger logger = LogManager.getLogger();
 
     @BeforeClass
-    public static void setUp() {
+    public static void setup() {
         logger.debug("Tests execution started");
     }
 
