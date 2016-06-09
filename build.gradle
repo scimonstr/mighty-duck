@@ -35,6 +35,6 @@ task wrapper(type: Wrapper) {
 
 task executeJunitTests(type:JavaExec) {
    main = "org.junit.runner.JUnitCore"
-   args = ["org.no.hook.Junit"]
+   args = ["org.no.hook.GlobalHook"]
    classpath = sourceSets.main.compileClasspath + sourceSets.main.output
 }
