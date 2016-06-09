@@ -9,6 +9,6 @@ public class FunctionalTest {
 
     @Test
     public void functionalScenario1() {
-        logger.debug(String.format("Executing %s test", FunctionalTest.class.getSimpleName()));
+        logger.debug(String.format("Executing %s test", getClass().getSimpleName()));
     }
 }

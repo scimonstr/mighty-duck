@@ -9,6 +9,6 @@ public class PageLoadTest {
 
     @Test
     public void pageLoadScenario1() {
-        logger.debug(String.format("Executing %s test", PageLoadTest.class.getSimpleName()));
+        logger.debug(String.format("Executing %s test", getClass().getSimpleName()));
     }
 }
