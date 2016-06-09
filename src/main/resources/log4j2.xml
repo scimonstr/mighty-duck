@@ -3,12 +3,29 @@
 			   status="WARN">
 	<Appenders>
 		<Console name="Console" target="SYSTEM_OUT">
-			<PatternLayout pattern="%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n"/>
+			<PatternLayout>
+				<Pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</Pattern>
+			</PatternLayout>
 		</Console>
+		<File name="debug" fileName="logs/debug.log">
+			<PatternLayout>
+				<Pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</Pattern>
+			</PatternLayout>
+		</File>
+		<File name="error" fileName="logs/error.log">
+			<PatternLayout>
+				<Pattern>%d{HH:mm:ss.SSS} %-5level %logger{36} - %msg%n</Pattern>
+			</PatternLayout>
+		</File>
 	</Appenders>
 	<Loggers>
-		<Root level="debug">
+		<Logger name="org.no.test.Test1" level="debug">
 			<AppenderRef ref="Console"/>
+			<AppenderRef ref="debug"/>
+		</Logger>
+		<Root level="error">
+			<AppenderRef ref="Console"/>
+			<AppenderRef ref="error"/>
 		</Root>
 	</Loggers>
 </Configuration>
