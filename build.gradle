@@ -11,7 +11,6 @@ repositories {
     jcenter()
 }
 
-
 sourceSets {
     main {
         java {
@@ -32,4 +31,10 @@ dependencies {
 
 task wrapper(type: Wrapper) {
     gradleVersion = "2.13"
+}
+
+task executeJunitTests(type:JavaExec) {
+   main = "org.junit.runner.JUnitCore"
+   args = ["org.no.hook.Junit"]
+   classpath = sourceSets.main.compileClasspath + sourceSets.main.output
 }
