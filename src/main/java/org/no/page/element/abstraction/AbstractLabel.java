@@ -1,6 +1,6 @@
-package org.no.hook.page.element.abstraction;
+package org.no.page.element.abstraction;
 
-import org.no.hook.page.element.ifase.Label;
+import org.no.page.element.ifase.Label;
 import org.openqa.selenium.WebElement;
 
 public class AbstractLabel extends AbstractElement implements Label {

@@ -1,4 +1,4 @@
-package org.no.hook.page.element.ifase;
+package org.no.page.element.ifase;
 
 public interface Element {
     boolean isDisplayed();

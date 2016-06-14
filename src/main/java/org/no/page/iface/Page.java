@@ -1,4 +1,4 @@
-package org.no.hook.page.iface;
+package org.no.page.iface;
 
 import org.openqa.selenium.WebDriver;
 

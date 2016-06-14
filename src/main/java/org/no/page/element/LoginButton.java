@@ -1,6 +1,6 @@
-package org.no.hook.page.element;
+package org.no.page.element;
 
-import org.no.hook.page.element.abstraction.AbstractButton;
+import org.no.page.element.abstraction.AbstractButton;
 import org.openqa.selenium.WebElement;
 
 public class LoginButton extends AbstractButton{
