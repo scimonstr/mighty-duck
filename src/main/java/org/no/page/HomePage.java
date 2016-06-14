@@ -1,6 +1,6 @@
-package org.no.hook.page;
+package org.no.page;
 
-import org.no.hook.page.iface.Page;
+import org.no.page.iface.Page;
 import org.openqa.selenium.WebDriver;
 
 public class HomePage implements Page {
