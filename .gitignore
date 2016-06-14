@@ -15,7 +15,8 @@ hs_err_pid*
 .gradle/
 build/
 
-#idea dirs
+#idea dirs and files
+*.iml
 .idea/
 
 #log dirs
