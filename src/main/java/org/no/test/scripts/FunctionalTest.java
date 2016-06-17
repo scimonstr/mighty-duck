@@ -6,25 +6,17 @@ import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
+import org.no.page.HomePage;
+import org.no.test.scripts.abstractions.AbstractTest;
 
-@RunWith(Parameterized.class)
-public class FunctionalTest {
+public class FunctionalTest extends AbstractTest {
     private static final Logger logger = LogManager.getLogger();
-
-    @Parameterized.Parameters
-    public static Object[][] data() {
-        return new Object[][] {{ 1, 1 }, {0, 1}, {2, 2}};
-    }
-
-    @Parameterized.Parameter(value = 0)
-    public int actual;
-
-    @Parameterized.Parameter(value = 1)
-    public int expected;
+    private static final HomePage homePage = new HomePage();
 
     @Test
     public void functionalScenario1() {
         logger.debug(String.format("Executing %s test", getClass().getSimpleName()));
-        Assert.assertEquals(expected, actual);
+        homePage.getCalculator().rnd();
+        Assert.assertFalse(homePage.getCalculator().getResult().isEmpty());
     }
 }

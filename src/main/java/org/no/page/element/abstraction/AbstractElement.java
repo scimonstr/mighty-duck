@@ -1,14 +1,11 @@
 package org.no.page.element.abstraction;
 
-import org.no.page.element.ifase.Element;
+import org.no.page.element.iface.Element;
 import org.openqa.selenium.WebElement;
 
 public class AbstractElement implements Element{
-    protected WebElement wrappedElement;
 
-    protected AbstractElement(WebElement wrappedElement) {
-        this.wrappedElement = wrappedElement;
-    }
+     WebElement wrappedElement;
 
     /**
      * Returns true if an element is displayed on the page
