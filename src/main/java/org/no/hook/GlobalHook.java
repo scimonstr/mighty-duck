@@ -6,6 +6,7 @@ import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
+import org.no.context.GlobalContext;
 import org.no.test.suite.FunctionalTests;
 import org.no.test.suite.PageLoadingTests;
 
@@ -17,11 +18,13 @@ public class GlobalHook {
     @BeforeClass
     public static void setup() {
         logger.debug("Tests execution started");
+        GlobalContext.getDriver().get(GlobalContext.getAppURL().toString());
     }
 
     @AfterClass
     public static void tearDown() {
         logger.debug("Tests execution ended");
+        GlobalContext.getDriver().quit();
     }
 
 }

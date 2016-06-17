@@ -10,11 +10,11 @@ public class AbstractTest {
 
     @Before
     public void setup() {
-        driver.get(GlobalContext.getAppURL().toString());
+        //actions to be performed after each test
     }
 
     @After
     public void tearDown() {
-        driver.quit();
+        //actions to be performed after each test
     }
 }
