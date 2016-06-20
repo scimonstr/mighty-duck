@@ -12,8 +12,8 @@ branches:
 
 cache:
   directories:
-  - $HOME/.gradle
-  - $HOME/.gradle/wrapper/
+  - $HOME/gradle
+  - $HOME/gradle/wrapper/
   
 build:
   ./gradlew test
