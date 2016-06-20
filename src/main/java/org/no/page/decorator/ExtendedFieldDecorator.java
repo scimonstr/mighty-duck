@@ -1,6 +1,6 @@
 package org.no.page.decorator;
 
-import org.no.annotations.Container;
+import org.no.annotation.Container;
 import org.no.page.element.abstraction.AbstractElement;
 import org.no.page.element.factory.DefaultElementFactory;
 import org.no.page.element.factory.iface.ElementFactory;

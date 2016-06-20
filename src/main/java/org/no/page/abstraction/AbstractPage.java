@@ -1,4 +1,4 @@
-package org.no.page.abstractions;
+package org.no.page.abstraction;
 
 import org.no.context.GlobalContext;
 import org.no.page.decorator.ExtendedFieldDecorator;

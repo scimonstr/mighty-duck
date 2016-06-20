@@ -1,7 +1,7 @@
 package org.no.page;
 
-import org.no.annotations.Container;
-import org.no.page.abstractions.AbstractPage;
+import org.no.annotation.Container;
+import org.no.page.abstraction.AbstractPage;
 import org.no.page.element.container.Calculator;
 import org.openqa.selenium.support.FindBy;
 
