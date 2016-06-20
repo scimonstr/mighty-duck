@@ -3,6 +3,7 @@ package org.no.context;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -26,12 +27,19 @@ public class GlobalContext {
     }
 
     private static final URL appURL;
-    private static final WebDriver driver = new ChromeDriver();
+    private static WebDriver driver = new ChromeDriver();
 
     private GlobalContext() {
     }
 
-    public static WebDriver getDriver() {
+    public static synchronized WebDriver getDriver() {
+        try {
+            driver = driver.toString().contains("null") ? driver.getClass().newInstance() : driver;
+        } catch (InstantiationException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
         return driver;
     }
 
