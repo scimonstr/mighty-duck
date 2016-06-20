@@ -6,12 +6,20 @@ import org.no.context.GlobalContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import java.io.IOException;
+import java.util.Properties;
+
 public class AbstractTest {
-    private WebDriver driver = GlobalContext.getDriver();
+    static {
+        System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
+    }
+
+    protected WebDriver driver;
 
     @Before
     public void setup() {
         //actions to be performed after each test
+        driver = new ChromeDriver();
         driver.get(GlobalContext.getAppURL().toString());
     }
 
