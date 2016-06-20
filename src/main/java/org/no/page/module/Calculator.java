@@ -1,9 +1,9 @@
-package org.no.page.element.container;
+package org.no.page.module;
 
 import org.no.page.element.CalcButton;
 import org.no.page.element.MainLabel;
 import org.no.page.element.abstraction.AbstractElement;
-import org.no.page.element.iface.Element;
+import org.no.page.element.abstraction.Element;
 import org.openqa.selenium.support.FindBy;
 
 public class Calculator extends AbstractElement implements Element {

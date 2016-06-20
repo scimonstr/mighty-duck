@@ -1,13 +1,9 @@
-package org.no.page.element.factory;
+package org.no.page.decorator.factory;
 
 import org.no.page.element.abstraction.AbstractElement;
-import org.no.page.element.factory.iface.ElementFactory;
-import org.no.page.element.iface.Element;
 import org.openqa.selenium.WebElement;
 
-import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
-import java.lang.reflect.InvocationTargetException;
 
 public class DefaultElementFactory implements ElementFactory {
     @Override

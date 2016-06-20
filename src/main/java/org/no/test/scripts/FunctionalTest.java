@@ -5,7 +5,6 @@ import org.apache.logging.log4j.Logger;
 import org.junit.Assert;
 import org.junit.Test;
 import org.no.page.HomePage;
-import org.no.test.scripts.abstractions.AbstractTest;
 
 public class FunctionalTest extends AbstractTest {
     private final Logger logger = LogManager.getLogger();

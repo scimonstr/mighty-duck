@@ -1,13 +1,12 @@
 package org.no.page;
 
-import org.no.annotation.Container;
-import org.no.page.abstraction.AbstractPage;
-import org.no.page.element.container.Calculator;
+import org.no.annotation.Module;
+import org.no.page.module.Calculator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.FindBy;
 
 public class HomePage extends AbstractPage {
-    @Container
+    @Module
     @FindBy(css = "#sciout")
     private Calculator calculator;
 

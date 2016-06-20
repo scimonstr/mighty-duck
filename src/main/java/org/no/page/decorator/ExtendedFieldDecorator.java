@@ -1,10 +1,10 @@
 package org.no.page.decorator;
 
-import org.no.annotation.Container;
+import org.no.annotation.Module;
 import org.no.page.element.abstraction.AbstractElement;
-import org.no.page.element.factory.DefaultElementFactory;
-import org.no.page.element.factory.iface.ElementFactory;
-import org.no.page.element.iface.Element;
+import org.no.page.decorator.factory.DefaultElementFactory;
+import org.no.page.decorator.factory.ElementFactory;
+import org.no.page.element.abstraction.Element;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
@@ -23,7 +23,7 @@ public class ExtendedFieldDecorator extends DefaultFieldDecorator{
 
     @Override
     public Object decorate(final ClassLoader loader, final Field field) {
-        if (field.isAnnotationPresent(Container.class)) {
+        if (field.isAnnotationPresent(Module.class)) {
             return decorateContainer(loader, field);
         }
         if (Element.class.isAssignableFrom(field.getType())) {

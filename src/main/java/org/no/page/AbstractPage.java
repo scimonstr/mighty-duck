@@ -1,6 +1,5 @@
-package org.no.page.abstraction;
+package org.no.page;
 
-import org.no.context.GlobalContext;
 import org.no.page.decorator.ExtendedFieldDecorator;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;

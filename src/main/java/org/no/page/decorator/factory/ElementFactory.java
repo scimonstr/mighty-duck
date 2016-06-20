@@ -1,7 +1,6 @@
-package org.no.page.element.factory.iface;
+package org.no.page.decorator.factory;
 
 import org.no.page.element.abstraction.AbstractElement;
-import org.no.page.element.iface.Element;
 import org.openqa.selenium.WebElement;
 
 public interface ElementFactory {

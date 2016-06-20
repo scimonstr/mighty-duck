@@ -1,6 +1,5 @@
 package org.no.page.element.abstraction;
 
-import org.no.page.element.iface.Element;
 import org.openqa.selenium.WebElement;
 
 public class AbstractElement implements Element{
