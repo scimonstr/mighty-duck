@@ -5,9 +5,11 @@ import org.junit.Before;
 import org.no.context.GlobalContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
 
 import java.io.IOException;
 import java.util.Properties;
+import java.util.concurrent.TimeUnit;
 
 public class AbstractTest {
     static {
@@ -19,7 +21,8 @@ public class AbstractTest {
     @Before
     public void setup() {
         //actions to be performed after each test
-        driver = new ChromeDriver();
+        driver = new InternetExplorerDriver();
+        driver.manage().timeouts().implicitlyWait(5l, TimeUnit.SECONDS);
         driver.get(GlobalContext.getAppURL().toString());
     }
 
