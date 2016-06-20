@@ -13,7 +13,6 @@ hs_err_pid*
 
 #gradle dirs
 .gradle/
-gradle/
 build/
 
 #idea dirs and files
