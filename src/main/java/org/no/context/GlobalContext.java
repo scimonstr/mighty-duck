@@ -26,12 +26,13 @@ public class GlobalContext {
     }
 
     private static final URL appURL;
-    private static final WebDriver driver = new ChromeDriver();
+    private static WebDriver driver = new ChromeDriver();
 
     private GlobalContext() {
     }
 
-    public static WebDriver getDriver() {
+    public static synchronized WebDriver getDriver() {
+        driver = driver.toString().contains("null") ? new ChromeDriver() : driver;
         return driver;
     }
 

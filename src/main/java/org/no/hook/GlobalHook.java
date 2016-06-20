@@ -18,13 +18,11 @@ public class GlobalHook {
     @BeforeClass
     public static void setup() {
         logger.debug("Tests execution started");
-        GlobalContext.getDriver().get(GlobalContext.getAppURL().toString());
     }
 
     @AfterClass
     public static void tearDown() {
         logger.debug("Tests execution ended");
-        GlobalContext.getDriver().quit();
     }
 
 }
