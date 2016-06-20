@@ -40,6 +40,8 @@ task wrapper(type: Wrapper) {
 }
 
 task executeJunitTests(type:JavaExec) {
+    systemProperties.put("webdriver.chrome.driver", "drivers\\chromedriver.exe")
+    systemProperties.put("webdriver.ie.driver", "drivers\\IEDriverServer.exe")
    main = "org.junit.runner.JUnitCore"
    args = ["org.no.hook.GlobalHook"]
    classpath = sourceSets.main.compileClasspath + sourceSets.main.output
