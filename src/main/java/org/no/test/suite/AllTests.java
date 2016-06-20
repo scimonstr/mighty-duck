@@ -1,4 +1,4 @@
-package org.no.hook;
+package org.no.test.suite;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -12,7 +12,7 @@ import org.no.test.suite.PageLoadingTests;
 
 @RunWith(Suite.class)
 @Suite.SuiteClasses({FunctionalTests.class, PageLoadingTests.class})
-public class GlobalHook {
+public class AllTests {
     private static Logger logger = LogManager.getLogger();
 
     @BeforeClass
