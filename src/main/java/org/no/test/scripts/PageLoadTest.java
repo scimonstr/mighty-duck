@@ -13,10 +13,11 @@ import org.openqa.selenium.WebDriver;
 
 public class PageLoadTest extends AbstractTest{
     private final Logger logger = LogManager.getLogger();
-    private HomePage homePage = new HomePage();
+    private HomePage homePage;
 
     @Test
     public void pageLoadScenario1() {
+        homePage = new HomePage(driver);
         logger.debug(String.format("Executing %s test", getClass().getSimpleName()));
         Assert.assertTrue(homePage.isCalculatorDisplayed());
     }

@@ -12,12 +12,11 @@ import java.util.Properties;
 
 public class GlobalContext {
     static {
-        System.setProperty("webdriver.chrome.driver", "drivers\\chromedriver.exe");
         Properties properties = new Properties();
         try {
             properties.load(GlobalContext.class.getClassLoader().getResourceAsStream("project.properties"));
         } catch (IOException e) {
-            throw new RuntimeException("Properties file is not available");
+            e.printStackTrace();
         }
         try {
             appURL = new URL(properties.getProperty("base_url"));
@@ -27,20 +26,8 @@ public class GlobalContext {
     }
 
     private static final URL appURL;
-    private static WebDriver driver = new ChromeDriver();
 
     private GlobalContext() {
-    }
-
-    public static synchronized WebDriver getDriver() {
-        try {
-            driver = driver.toString().contains("null") ? driver.getClass().newInstance() : driver;
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        }
-        return driver;
     }
 
     public static URL getAppURL() {

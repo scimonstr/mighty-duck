@@ -8,11 +8,12 @@ import org.no.page.HomePage;
 import org.no.test.scripts.abstractions.AbstractTest;
 
 public class FunctionalTest extends AbstractTest {
-    private static final Logger logger = LogManager.getLogger();
-    private static final HomePage homePage = new HomePage();
+    private final Logger logger = LogManager.getLogger();
+    private HomePage homePage;
 
     @Test
     public void functionalScenario1() {
+        homePage = new HomePage(driver);
         logger.debug(String.format("Executing %s test", getClass().getSimpleName()));
         homePage.getCalculator().rnd();
         Assert.assertFalse(homePage.getCalculator().getResult().isEmpty());
