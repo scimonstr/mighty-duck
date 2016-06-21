@@ -1,10 +1,11 @@
 apply plugin: "java"
 
-project.ext{
+ext{
 	seleniumVersion = "2.52.0"
 	log4jApiVersion = "2.6.1"
 	log4jCoreVersion = "2.6.1"
 	junitVersion = "4.12"
+	base_url = "https://www.calculator.net"
 }
 
 repositories {
@@ -40,10 +41,35 @@ task wrapper(type: Wrapper) {
 }
 
 task executeJunitTests(type:JavaExec) {
-    systemProperties.put("webdriver.chrome.driver", "drivers\\chromedriver.exe")
-    systemProperties.put("webdriver.ie.driver", "drivers\\IEDriverServer.exe")
-    systemProperties.put("base_url", "https://calculator.net")
-   main = "org.junit.runner.JUnitCore"
-   args = ["org.no.test.suite.AllTests"]
-   classpath = sourceSets.main.compileClasspath + sourceSets.main.output
+    systemProperties.put("base_url", base_url)
+    main = "org.junit.runner.JUnitCore"
+    args = ["org.no.test.suite.AllTests"]
+    classpath = sourceSets.main.compileClasspath + sourceSets.main.output
+}
+
+task chromeTest << {
+    executeJunitTests.systemProperties = [
+            "webdriver.chrome.driver": "drivers\\chromedriver.exe",
+            "browser": "chrome",
+            "base_url": base_url
+    ]
+    executeJunitTests.execute()
+}
+
+task firefoxTest << {
+    executeJunitTests.systemProperties = [
+            "webdriver.firefox.bin": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
+            "browser": "firefox",
+            "base_url": base_url
+    ]
+    executeJunitTests.execute()
+}
+
+task ieTest << {
+    executeJunitTests.systemProperties = [
+            "webdriver.ie.driver": "drivers\\IEDriverServer.exe",
+            "browser": "ie",
+            "base_url": base_url
+    ]
+    executeJunitTests.execute()
 }

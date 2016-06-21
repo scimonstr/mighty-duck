@@ -1,9 +1,9 @@
 package org.no.page.decorator;
 
 import org.no.annotation.Module;
-import org.no.page.element.abstraction.AbstractElement;
 import org.no.page.decorator.factory.DefaultElementFactory;
 import org.no.page.decorator.factory.ElementFactory;
+import org.no.page.element.abstraction.AbstractElement;
 import org.no.page.element.abstraction.Element;
 import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebElement;

@@ -1,7 +1,5 @@
 package org.no.annotation;
 
-import org.openqa.selenium.support.FindBy;
-
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
