@@ -41,7 +41,6 @@ task wrapper(type: Wrapper) {
 }
 
 task executeJunitTests(type:JavaExec) {
-    systemProperties.put("base_url", base_url)
     main = "org.junit.runner.JUnitCore"
     args = ["org.no.test.suite.AllTests"]
     classpath = sourceSets.main.compileClasspath + sourceSets.main.output
