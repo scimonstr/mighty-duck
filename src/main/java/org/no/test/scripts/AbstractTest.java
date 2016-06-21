@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.phantomjs.PhantomJSDriver;
 
 import java.util.concurrent.TimeUnit;
 
@@ -15,7 +16,7 @@ class AbstractTest {
     @Before
     public void setup() {
         String browser = System.getProperty("browser") != null ? System.getProperty("browser") : "";
-        switch (System.getProperty("browser")) {
+        switch (browser) {
             case "chrome":
                 driver = new ChromeDriver();
                 break;
@@ -25,12 +26,16 @@ class AbstractTest {
             case "ie":
                 driver = new InternetExplorerDriver();
                 break;
+            case "phantom":
+                driver = new PhantomJSDriver();
+                break;
             default:
                 //if the browser property was not set
                 driver = new FirefoxDriver();
         }
+
         driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-        driver.get(System.getProperty("app_url"));
+        driver.get(System.getProperty("base_url"));
     }
 
     @After
