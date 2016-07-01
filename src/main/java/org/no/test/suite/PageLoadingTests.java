@@ -15,11 +15,11 @@ public class PageLoadingTests {
 
     @BeforeClass
     public static void setupPageLoadingSuite() {
-        logger.debug(String.format("Performing setup for %s test", FunctionalTests.class.getSimpleName()));
+        logger.debug(String.format("Performing setup for %s test", PageLoadingTests.class.getSimpleName()));
     }
 
     @AfterClass
     public static void tearDownPageLoadingSuite() {
-        logger.debug(String.format("Performing tear down for %s test", FunctionalTests.class.getSimpleName()));
+        logger.debug(String.format("Performing tear down for %s test", PageLoadingTests.class.getSimpleName()));
     }
 }
