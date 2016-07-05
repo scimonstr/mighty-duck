@@ -45,44 +45,52 @@ task wrapper(type: Wrapper) {
     gradleVersion = "2.13"
 }
 
-task executeJunitTests(type:JavaExec) {
+task chromeTest(type:JavaExec) {
+    systemProperties = [
+            "webdriver.chrome.driver": "drivers\\chromedriver.exe",
+            "browser": "chrome",
+            "base_url": base_url
+    ]
     main = "org.junit.runner.JUnitCore"
     args = ["org.no.test.suite.AllTests"]
     classpath = sourceSets.main.compileClasspath + sourceSets.main.output
 }
 
-task chromeTest << {
-    executeJunitTests.systemProperties = [
-            "webdriver.chrome.driver": "drivers\\chromedriver.exe",
-            "browser": "chrome",
-            "base_url": base_url
-    ]
-    executeJunitTests.execute()
-}
-
-task firefoxTest << {
-    executeJunitTests.systemProperties = [
+task firefoxTest(type:JavaExec) {
+    systemProperties = [
             "webdriver.firefox.bin": "C:\\Program Files\\Mozilla Firefox\\firefox.exe",
             "browser": "firefox",
             "base_url": base_url
     ]
-    executeJunitTests.execute()
+    main = "org.junit.runner.JUnitCore"
+    args = ["org.no.test.suite.AllTests"]
+    classpath = sourceSets.main.compileClasspath + sourceSets.main.output
 }
 
-task ieTest << {
-    executeJunitTests.systemProperties = [
+task ieTest(type:JavaExec) {
+    systemProperties = [
             "webdriver.ie.driver": "drivers\\IEDriverServer.exe",
             "browser": "ie",
             "base_url": base_url
     ]
-    executeJunitTests.execute()
+    main = "org.junit.runner.JUnitCore"
+    args = ["org.no.test.suite.AllTests"]
+    classpath = sourceSets.main.compileClasspath + sourceSets.main.output
 }
 
-task phantomTest << {
-    executeJunitTests.systemProperties = [
+task phantomTest(type:JavaExec) {
+    systemProperties = [
             "phantomjs.binary.path": "drivers\\phantomjs.exe",
             "browser": "phantom",
             "base_url": base_url
     ]
-    executeJunitTests.execute()
+    main = "org.junit.runner.JUnitCore"
+    args = ["org.no.test.suite.AllTests"]
+    classpath = sourceSets.main.compileClasspath + sourceSets.main.output
+}
+
+task executeAll {
+    ["chromeTest", "firefoxTest", "ieTest", "phantomTest"].forEach {
+        tasks[it].execute()
+    }
 }
