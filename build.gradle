@@ -89,7 +89,7 @@ task phantomTest(type:JavaExec) {
     classpath = sourceSets.main.compileClasspath + sourceSets.main.output
 }
 
-task executeAll {
+task executeAll << {
     ["chromeTest", "firefoxTest", "ieTest", "phantomTest"].forEach {
         tasks[it].execute()
     }
